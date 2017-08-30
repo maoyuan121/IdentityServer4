@@ -21,7 +21,7 @@ The Big Picture
 
 通常每一个和每一层（前端，中间层，后端）都要保护资源，实现认证 – often against the same user store.
 
-Outsourcing these fundamental security functions to a security token service prevents duplicating that functionality across those applications and endpoints.
+将这些基础的安全功能委托给一个安全token服务，以此减少应用和终端在这块的重复工作。
 
 Restructuring the application to support a security token service leads to the following architecture and protocols:
 
