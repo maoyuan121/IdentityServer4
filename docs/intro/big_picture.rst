@@ -29,12 +29,11 @@ Restructuring the application to support a security token service leads to the f
 
 Such a design divides security concerns into two parts:
 
-Authentication
+认证
 ^^^^^^^^^^^^^^
-Authentication is needed when an application needs to know the identity of the current user.
-Typically these applications manage data on behalf of that user and need to make sure that this user can only
-access the data for which he is allowed. The most common example for that is (classic) web applications –
-but native and JS-based applications also have a need for authentication.
+当应用需要知道当前用户的identity的时候就要认证（Authentication）。
+
+这些应用决定当前用户能访问哪些数据，不能访问哪些数据。最典型的例子是Web应用 - 但是原生和基于JS的应用也需要认证。T
 
 The most common authentication protocols are SAML2p, WS-Federation and OpenID Connect – SAML2p being the
 most popular and the most widely deployed.
