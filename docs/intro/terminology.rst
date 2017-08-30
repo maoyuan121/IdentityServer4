@@ -1,26 +1,25 @@
-Terminology
+术语
 ===========
 
-The specs, documentation and object model use a certain terminology that you should be aware of.
+文档和对象模型使用了一些术语，你需要有所了解。
 
 .. image:: images/terminology.png
 
 IdentityServer
 ^^^^^^^^^^^^^^
-IdentityServer is an OpenID Connect provider - it implements the OpenID Connect and OAuth 2.0 protocol.
+IdentityServer是一个OpenID Connect Provider - 它实现了OpenID Conect和OAuth 2.0 protocal。
 
-Different literature uses different terms for the same role - you probably also find security token service,
-identity provider, authorization server, IP-STS and more.
+不同的文献使用了不同的术语 - security token service, identity provider, authorization server, IP-STS等。
 
 But they are in a nutshell all the same: a piece of software that issues security tokens to clients.
 
-IdentityServer has a number of jobs and features - including:
+IdentityServer有斜面的一些功能：
 
-* protect your resources
+* 保护你的资源
 
-* authenticate users using a local account store or via an external identity provider
+* 使用本地的account store认证用户， 或通过外部的identity provider认证用户
 
-* provide session management and single sign-on
+* 提供session管理和单点登录
 
 * manage and authenticate clients
 
@@ -28,20 +27,20 @@ IdentityServer has a number of jobs and features - including:
 
 * validate tokens
 
-User
+用户
 ^^^^
-A user is a human that is using a registered client to access resources.
+用户是一个人，通过注册成客户来访问资源。
 
 Client
 ^^^^^^
-A client is a piece of software that requests tokens from IdentityServer - either for authenticating a user (requesting an identity token) 
+Client是一些软件，它从IdentityServer请求一个token - either for authenticating a user (requesting an identity token) 
 or for accessing a resource (requesting an access token). A client must be first registered with IdentityServer before it can request tokens.
 
 Examples for clients are web applications, native mobile or desktop applications, SPAs, server processes etc.
 
-Resources
+资源
 ^^^^^^^^^
-Resources are something you want to protect with IdentityServer - either identity data of your users, or APIs. 
+Resource是你想使用IdentityServer保护的东西 - either identity data of your users, or APIs. 
 
 Every resource has a unique name - and clients use this name to specify to which resources they want to get access to.
 
