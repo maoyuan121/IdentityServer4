@@ -1,26 +1,25 @@
 The Big Picture
 ===============
 
-Most modern applications look more or less like this:
+现代应用或多或少看起来如下：
 
 .. image:: images/appArch.png
 
-The most common interactions are:
+最常见的交互如下：
 
-* Browsers communicate with web applications
+* 浏览器和Web应用的通信
 
-* Web applications communicate with web APIs (sometimes on their own, sometimes on behalf of a user)
+* Web应用和Web API之间的通信（sometimes on their own, sometimes on behalf of a user）
 
-* Browser-based applications communicate with web APIs
+* 基于浏览器的应用和Web API之间的通信
 
-* Native applications communicate with web APIs
+* 原生应用和Web API之间的通信
 
-* Server-based applications communicate with web APIs
+* 基于服务器的应用和Web API之间的通信
 
-* Web APIs communicate with web APIs (sometimes on their own, sometimes on behalf of a user)
+* Web API和Web API之间的通信（sometimes on their own, sometimes on behalf of a user）
 
-Typically each and every layer (front-end, middle-tier and back-end) has to protect resources and
-implement authentication and/or authorization – often against the same user store.
+通常每一个和每一层（前端，中间层，后端）都要保护资源，实现认证 – often against the same user store.
 
 Outsourcing these fundamental security functions to a security token service prevents duplicating that functionality across those applications and endpoints.
 
