@@ -1,37 +1,36 @@
-Welcome to IdentityServer4
+欢迎来到IdentityServer4
 ==========================
 
 .. image:: images/logo.png
    :align: center
 
-IdentityServer4 is an OpenID Connect and OAuth 2.0 framework for ASP.NET Core.
+IdentityServer4是一个ASP.NET Core下面的OpenID Connect和OAuth 2.0的框架。
 
-It enables the following features in your applications:
+能让你的应用有下面的一些功能：
 
-Authentication as a Service
+将认证服务化
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Centralized login logic and workflow for all of your applications (web, native, mobile, services).
+为你的多个应用（web, native, mobile,services）提供集中化的登录逻辑。
 
-Single Sign-on / Sign-out
+单点登录
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-Single sign-on (and out) over multiple application types.
+为多个应用提供单点登录。
 
-Access Control for APIs
+为API提供进入控制
 ^^^^^^^^^^^^^^^^^^^^^^^
-Issue access tokens for APIs for various types of clients, e.g. server to server, web applications, SPAs and
-native/mobile apps.
+为服务于多种客户端类型（server to server, web applications, SPAs和native/mobile 应用）的API提供进入tokens。
 
 Federation Gateway
 ^^^^^^^^^^^^^^^^^^
-Support for external identity providers like Azure Active Directory, Google, Facebook etc.
+支持外部的identity provider（如Azure Active Directory, Google, Facebook等）。
 This shields your applications from the details of how to connect to these external providers.
 
-Focus on Customization
+可定制
 ^^^^^^^^^^^^^^^^^^^^^^
-The most important part - many aspect of IdentityServer can be customized to fit **your** needs.
-Since IdentityServer is a framework and not a boxed product or a SaaS, you can write code to adapt the system the way it makes sense for your scenarios.
+最重要的是 - IdentityServer支持定制化以适配你专有的需求。
+因为IdentityServer是一个框架，不是一个封闭的产品或SaaS，你可以对IdentityServer进行定制以适配你的需求和场景。
 
-Free and Commercial Support
+免费的商业支持
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you need help building or running your identity platform, :ref:`let us know <refSupport>`.
 There are several ways we can help you out.
