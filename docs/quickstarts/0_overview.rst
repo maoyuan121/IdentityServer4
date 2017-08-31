@@ -65,8 +65,8 @@ IdentityServers使用通常的模式去configure、add services到ASP.NET Core h
     }
   }
 
-``AddIdentityServer``将IdentityServer服务注入到DI中。同时注册了一个内存存储器用来存储运行时的状态。这在开发场景中很有用。 For production scenarios you need a persistent or shared store like a database or cache for that.
-See the :ref:`EntityFramework <refEntityFrameworkQuickstart>` quickstart for more information.
+``AddIdentityServer``将IdentityServer服务注入到DI中。同时注册了一个内存存储器用来存储运行时的状态。这在开发场景中很有用。在生产环境下你需要使用database或者缓存来持续化这些数据。
+更多请见 :ref:`EntityFramework <refEntityFrameworkQuickstart>` quickstart for more information.
 
 The ``AddTemporarySigningCredential`` extension creates temporary key material for signing tokens on every start.
 Again this might be useful to get started, but needs to be replaced by some persistent key material for production scenarios.
@@ -74,24 +74,24 @@ See the :ref:`cryptography docs <refCrypto>` for more information.
 
 .. Note:: IdentityServer is not yet ready to be launched. We will add the required services in the following quickstarts.
 
-Modify hosting
+修改hosting
 ^^^^^^^^^^^^^^^
 
-By default Visual Studio uses IIS Express to host your web project. This is totally fine,
-except that you won't be able to see the real time log output to the console.
+VS默认使用IIS Express来host你的Web项目。这样做没什么问题。
+但是这样的话，你不能在console里面看到实时输出的log。
 
 IdentityServer makes extensive use of logging whereas the "visible" error message in the UI
 or returned to clients are deliberately vague.
 
-We recommend to run IdentityServer in the console host. 
-You can do this by switching the launch profile in Visual Studio.
-You also don't need to launch a browser every time you start IdentityServer - you can turn that off as well:
+我们推荐使用console host来运行IdentityServer。
+你可以在VS的lauch profile里面的切换。
+同样不需要在每次运行IdentityServer的时候运行浏览器 - 你可以关闭它：
 
 .. image:: images/0_launch_profile.png
 
-When you switch to self-hosting, the web server port defaults to 5000. 
-You can configure this either in the launch profile dialog above, or programmatically in ``Program.cs`` - 
-we use the following configuration for the IdentityServer host in the quickstarts::
+当你切换到self-hosting, Web Server的端口默认为5000。
+你可以在launch profile对话框中进行配置，或者在``Program.cs``中使用代码进行配置 - 
+在quickstarts中使用下面的代码来配置IdentityServer host::
 
     public class Program
     {
@@ -111,18 +111,17 @@ we use the following configuration for the IdentityServer host in the quickstart
         }
     }
 
-.. Note:: We recommend to configure the same port for IIS Express and self-hosting. This way you can switch between the two without having to modify any configuration in your clients.
+.. Note:: 推荐配置IIS Express和self-hosting为同一个端口。这样你不需要在切换它们的时候去修改配置。
 
-How to run the quickstart
+怎么运行quickstart
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-As mentioned above every quickstart has a reference solution - you can find the code in the 
+上面提到了每个quickstarts都有一个解决方案 - 能在
 `IdentityServer4.Samples <https://github.com/IdentityServer/IdentityServer4.Samples>`_
-repo in the quickstarts folder.
+仓储中的qucikstarts文件夹中看到。
 
-The easiest way to run the individual parts of a quickstart solution is to set the startup mode to "current selection".
-Right click the solution and select "Set Startup Projects":
+运行quickstart最简单的方法：设置启动模式为"current selection"。
+右键解决方案，选择 "Set Startup Projects":
 
 .. image:: images/0_startup_mode.png
 
-Typically you start IdentityServer first, then the API, and then the client. Only run in the debugger if you actually want to debug.
-Otherwise Ctrl+F5 is the best way to run the projects.
+通常先启动IdentityServer，然后是API，在后是client。只有在debug的时候才以debugger模式运行。
