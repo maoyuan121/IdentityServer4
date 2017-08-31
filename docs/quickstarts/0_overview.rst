@@ -1,53 +1,48 @@
-Setup and Overview
+安装与概述
 ==================
 
-There are two fundamental ways to start a new IdentityServer project:
+有两种方式开始一个IdentityServer项目：
 
-* start from scratch
-* start with the ASP.NET Identity template in Visual Studio
+* 从头开始，完全自己写
+* 在VS中使用ASP.NET Identity模板
 
-If you start from scratch, we provide a couple of helpers and in-memory stores, so 
-you don't have to worry about persistence right from the start.
+如果你是从头完全自己写的话，我们提供了一些列的helper和内存存储，因此你不要担心持续化的问题。
 
-If you start with ASP.NET Identity, we provide an easy way to integrate with that as well.
+如果你使用的是ASP.NET Identity， 我们提供了一个非常简单的与之集成的方法。
 
-The quickstarts provide step by step instructions for various common identityserver scenarios.
-They start with the absolute basics and become more complex - 
-it is recommended you do them in order.
-
-Every quickstart has a reference solution - you can find the code in the 
+每个quickstart都有对应的solution - 你可以在
 `IdentityServer4.Samples <https://github.com/IdentityServer/IdentityServer4.Samples>`_
-repo in the quickstarts folder.
+仓储的quickstarts文件夹中找到。
 
-Basic setup
+安装
 ^^^^^^^^^^^
-The screen shots show Visual Studio - but this is not a requirement.
+下图显示的是VS - 但这不是必须的。
 
-**Creating the quickstart IdentityServer**
+**创建一个IdentityServer的quickstart**
 
-Start by creating a new ASP.NET Core project.
+首先创建一个新的ASP.NET Core项目于。
 
 .. image:: images/0_new_web_project.png
 
-Then select the "Empty" option.
+选择"Empty"选项。
 
 .. image:: images/0_empty_web.png
 
-.. note:: IdentityServer currently only targets ASP.NET Core 1.1.
+.. note:: IdentityServer目前支持ASP.NEY Core1.1。
 
-Next, add the `IdentityServer4` nuget package:
+下一步，添加`IdentityServer4` nuget包:
 
 .. image:: images/0_nuget.png
-    
-Alternatively you can use Package Manager Console to add the dependency by running the following command:
+    
+或者你可以在包管理器控制台下运行下面的命令来安装`IdentityServer4`:
 
     "Install-Package IdentityServer4"
 
-IdentityServer uses the usual pattern to configure and add services to an ASP.NET Core host.
-In ``ConfigureServices`` the required services are configured and added to the DI system. 
-In ``Configure`` the middleware is added to the HTTP pipeline.
+IdentityServers使用通常的模式去configure、add services到ASP.NET Core host中。
+在``ConfigureServices``将其添加到依赖注入系统中。
+在``Configure``将中间件添加到HTTP管道线中。
 
-Modify your ``Startup.cs`` file to look like this::
+修改你的``Startup.cs``文件如下:
 
   public class Startup
   {
@@ -70,8 +65,7 @@ Modify your ``Startup.cs`` file to look like this::
     }
   }
 
-``AddIdentityServer`` registers the IdentityServer services in DI. It also registers an in-memory store for runtime state.
-This is useful for development scenarios. For production scenarios you need a persistent or shared store like a database or cache for that.
+``AddIdentityServer``将IdentityServer服务注入到DI中。同时注册了一个内存存储器用来存储运行时的状态。这在开发场景中很有用。 For production scenarios you need a persistent or shared store like a database or cache for that.
 See the :ref:`EntityFramework <refEntityFrameworkQuickstart>` quickstart for more information.
 
 The ``AddTemporarySigningCredential`` extension creates temporary key material for signing tokens on every start.
